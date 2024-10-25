@@ -53,6 +53,69 @@ section{
     margin: 0 auto;
 }
 
+.btn,
+.option-btn,
+.delete-btn,
+.inline-btn,
+.inline-option-btn,
+.inline-delete-btn{
+    border-radius: 0.5rem;
+    padding: 1rem 3rem;
+    font-size: 1.8rem;
+    color: #fff;
+    margin-top: 1rem;
+    text-transform: capitalize;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn,
+.option-btn,
+.delete-btn{
+    display: block;
+    width: 100%;
+}
+
+.inline-btn,
+.inline-option-btn,
+.inline-delete-btn{
+    display: inline-block;
+
+}
+
+.btn,
+.inline-btn{
+    background-color: var(--main-color);
+
+}
+
+.option-btn,
+.inline-option-btn{
+    background-color: orange;
+}
+
+.delete-btn,
+.inline-delete-btn{
+    background-color: var(--red);
+}
+
+.btn:hover,
+.option-btn:hover,
+.delete-btn:hover,
+.inline-btn:hover,
+.inline-option-bt:hover,
+.inline-delete-btn:hover{
+    background-color: var(--black);
+    color: var(--white);
+}
+
+.flex-btn{
+    display: flex;
+    gap: 1rem;
+
+
+}
+
 .header{
     background-color: var(--white);
     border-bottom: var(--border);
@@ -120,3 +183,62 @@ section{
     background-color: var(--black);
     color: var(--white);
 }
+
+#search-btn{
+    display: none;
+}
+
+.header .flex .profile{
+    position: absolute;
+    top: 120%; right: 2rem; 
+    background-color: var(--white);
+    border-radius: 0.5rem;
+    padding: 2rem;
+    text-align: center;
+    width: 30rem;
+    transform: scale(0);
+    transform-origin: top right; 
+    transition: 0.2s linear;
+}
+
+.header .flex .profile.active{
+    transform: scale(1);
+}
+
+.header .flex .profile img{
+    height: 10rem;
+    width: 10rem;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 0.5rem;  
+}
+
+.header .flex .profile h3{
+    font-size: 2rem;
+    color: var(--black);
+}
+
+.header .flex .profile span{
+    color: var(--light-color);
+    font-size: 1.6rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
