@@ -61,6 +61,16 @@
 <!-- header section ends -->
 
 <div class="side-bar">
+
+    <div id="close-bar">
+        <i class="fas fa-times"></i>
+    </div>
+
+
+
+
+
+
     <div class="profile">
         <?php
         $select_profile = $conn->prepare("SELWCT * FROM 'tutors' WHERE id
