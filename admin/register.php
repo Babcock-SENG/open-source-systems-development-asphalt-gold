@@ -2,9 +2,16 @@
 
 include '../components/connect.php';
 
+if(isset($_COOKIE['tutor_id'])){
+   $tutor_id = $_COOKIE['tutor_id'];
+}else{
+   $tutor_id = '';
+   header('location:login.php');
+}
+
 if(isset($_POST['submit'])){
 
-   $id = unique_id();
+   $id = create_unique_id();
    $name = $_POST['name'];
    $name = filter_var($name, FILTER_SANITIZE_STRING);
    $profession = $_POST['profession'];
@@ -19,29 +26,44 @@ if(isset($_POST['submit'])){
    $image = $_FILES['image']['name'];
    $image = filter_var($image, FILTER_SANITIZE_STRING);
    $ext = pathinfo($image, PATHINFO_EXTENSION);
-   $rename = unique_id().'.'.$ext;
+   $rename = create_unique_id().'.'.$ext;
    $image_size = $_FILES['image']['size'];
    $image_tmp_name = $_FILES['image']['tmp_name'];
    $image_folder = '../uploaded_files/'.$rename;
 
-   $select_tutor = $conn->prepare("SELECT * FROM `tutors` WHERE email = ?");
-   $select_tutor->execute([$email]);
+   $select_tutor_email = $conn->prepare("SELECT * FROM `tutors` WHERE email = ?");
+   $select_tutor_email->execute([$email]);
    
-   if($select_tutor->rowCount() > 0){
+   if($select_tutor_email->rowCount() > 0){
       $message[] = 'email already taken!';
    }else{
       if($pass != $cpass){
          $message[] = 'confirm passowrd not matched!';
       }else{
-         $insert_tutor = $conn->prepare("INSERT INTO `tutors`(id, name, profession, email, password, image) VALUES(?,?,?,?,?,?)");
-         $insert_tutor->execute([$id, $name, $profession, $email, $cpass, $rename]);
-         move_uploaded_file($image_tmp_name, $image_folder);
-         $message[] = 'new tutor registered! please login now';
+         if($image_size > 2000000){
+            $message[] = 'image size is too large!';
+         }else{
+            $insert_tutor = $conn->prepare("INSERT INTO `tutors`(id, name, profession, email, password, image) VALUES(?,?,?,?,?,?)");
+            $insert_tutor->execute([$id, $name, $profession, $email, $cpass, $rename]);
+            move_uploaded_file($image_tmp_name, $image_folder);
+
+
+            $verify_tutor = $conn->prepare("SELECT * FROM `tutors` WHERE email = ? AND password = ? LIMIT 1");
+            $verify_tutor->execute([$email, $pass]);
+            $row = $verify_tutor->fetch(PDO::FETCH_ASSOC);
+            if($insert_tutor){
+               if($verify_tutor->rowCount() > 0){
+                  setcookie('tutor_id', $row['id'], time() + 60*60*24*30, '/');
+                  header('location:dashboard.php');
+               }else{
+                  $message[] = 'something went wrong'
+               }
+            }
+         }
       }
    }
 
 }
-
 ?>
 
 <!DOCTYPE html>

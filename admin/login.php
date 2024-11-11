@@ -13,7 +13,7 @@ if(isset($_POST['submit'])){
    $select_tutor->execute([$email, $pass]);
    $row = $select_tutor->fetch(PDO::FETCH_ASSOC);
    
-   if($select_tutor->rowCount() > 0){
+   if($verify_tutor->rowCount() > 0){
      setcookie('tutor_id', $row['id'], time() + 60*60*24*30, '/');
      header('location:dashboard.php');
    }else{
@@ -70,43 +70,7 @@ if(isset($message)){
 
 </section>
 
-<!-- registe section ends -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<script>
-
-let darkMode = localStorage.getItem('dark-mode');
-let body = document.body;
-
-const enabelDarkMode = () =>{
-   body.classList.add('dark');
-   localStorage.setItem('dark-mode', 'enabled');
-}
-
-const disableDarkMode = () =>{
-   body.classList.remove('dark');
-   localStorage.setItem('dark-mode', 'disabled');
-}
-
-if(darkMode === 'enabled'){
-   enabelDarkMode();
-}else{
-   disableDarkMode();
-}
-
-</script>
+<!-- register section ends -->
    
 </body>
 </html>

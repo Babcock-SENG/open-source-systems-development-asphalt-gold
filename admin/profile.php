@@ -9,21 +9,21 @@
       header('location:login.php');
    }
 
-   $select_playlists = $conn->prepare("SELECT * FROM `playlist` WHERE tutor_id = ?");
-   $select_playlists->execute([$tutor_id]);
-   $total_playlists = $select_playlists->rowCount();
-
-   $select_contents = $conn->prepare("SELECT * FROM `content` WHERE tutor_id = ?");
-   $select_contents->execute([$tutor_id]);
-   $total_contents = $select_contents->rowCount();
-
-   $select_likes = $conn->prepare("SELECT * FROM `likes` WHERE tutor_id = ?");
-   $select_likes->execute([$tutor_id]);
-   $total_likes = $select_likes->rowCount();
-
-   $select_comments = $conn->prepare("SELECT * FROM `comments` WHERE tutor_id = ?");
-   $select_comments->execute([$tutor_id]);
-   $total_comments = $select_comments->rowCount();
+   $count_contents = $conn->prepare("SELECT * FROM `content` WHERE tutor_id = ?");
+   $count_contents->execute([$tutor_id]);
+   $total_contents = $count_contents->rowCount();
+   
+   $count_playlists = $conn->prepare("SELECT * FROM `playlist` WHERE tutor_id = ?");
+   $count_playlists->execute([$tutor_id]);
+   $total_playlists = $count_playlists->rowCount();
+   
+   $count_likes = $conn->prepare("SELECT * FROM `likes` WHERE tutor_id = ?");
+   $count_likes->execute([$tutor_id]);
+   $total_likes = $count_likes->rowCount();
+   
+   $count_comments = $conn->prepare("SELECT * FROM `comments` WHERE tutor_id = ?");
+   $count_comments->execute([$tutor_id]);
+   $total_comments = $count_comments->rowCount();
 
 ?>
 
@@ -65,7 +65,7 @@
          </div>
          <div class="box">
             <span><?= $total_contents; ?></span>
-            <p>total videos</p>
+            <p>total contents</p>
             <a href="contents.php" class="btn">view contents</a>
          </div>
          <div class="box">
