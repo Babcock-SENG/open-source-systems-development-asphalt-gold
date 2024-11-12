@@ -86,3 +86,13 @@ if(isset($_COOKIE['user_id'])){
 </section>
 
 <!-- about section ends -->
+
+
+   
+<?php include 'components/footer.php'; ?>
+
+<!-- custom js file link  -->
+<script src="js/script.js"></script>
+   
+</body>
+</html>
