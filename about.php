@@ -88,6 +88,128 @@ if(isset($_COOKIE['user_id'])){
 <!-- about section ends -->
 
 
+
+   <!-- reviews section starts  -->
+
+<section class="reviews">
+
+   <h1 class="heading">student's reviews</h1>
+
+   <div class="box-container">
+
+      <div class="box">
+         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo fugiat, quaerat voluptate odio consectetur assumenda fugit maxime unde at ex?</p>
+         <div class="user">
+            <img src="images/pic-2.jpg" alt="">
+            <div>
+               <h3>john deo</h3>
+               <div class="stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star-half-alt"></i>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <div class="box">
+         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo fugiat, quaerat voluptate odio consectetur assumenda fugit maxime unde at ex?</p>
+         <div class="user">
+            <img src="images/pic-3.jpg" alt="">
+            <div>
+               <h3>john deo</h3>
+               <div class="stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star-half-alt"></i>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <div class="box">
+         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo fugiat, quaerat voluptate odio consectetur assumenda fugit maxime unde at ex?</p>
+         <div class="user">
+            <img src="images/pic-4.jpg" alt="">
+            <div>
+               <h3>john deo</h3>
+               <div class="stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star-half-alt"></i>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <div class="box">
+         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo fugiat, quaerat voluptate odio consectetur assumenda fugit maxime unde at ex?</p>
+         <div class="user">
+            <img src="images/pic-5.jpg" alt="">
+            <div>
+               <h3>john deo</h3>
+               <div class="stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star-half-alt"></i>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <div class="box">
+         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo fugiat, quaerat voluptate odio consectetur assumenda fugit maxime unde at ex?</p>
+         <div class="user">
+            <img src="images/pic-6.jpg" alt="">
+            <div>
+               <h3>john deo</h3>
+               <div class="stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star-half-alt"></i>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <div class="box">
+         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo fugiat, quaerat voluptate odio consectetur assumenda fugit maxime unde at ex?</p>
+         <div class="user">
+            <img src="images/pic-7.jpg" alt="">
+            <div>
+               <h3>john deo</h3>
+               <div class="stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star-half-alt"></i>
+               </div>
+            </div>
+         </div>
+      </div>
+
+   </div>
+
+</section>
+
+<!-- reviews section ends -->
+
+
+
+
+
+
    
 <?php include 'components/footer.php'; ?>
 
