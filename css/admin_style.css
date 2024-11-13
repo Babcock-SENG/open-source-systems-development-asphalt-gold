@@ -60,6 +60,53 @@ section {
   max-width: 1200px;
 }
 
+.heading{
+  padding-bottom: 1.5rem;
+  border-bottom: var(--border);
+  font-size: 3rem;
+  color: var(--black);
+  text-transform: capitalize;
+  margin-bottom: 3rem;
+}
+
+.message{
+  position: sticky;
+  top:0;
+  background-color: var(--light-bg);
+  padding:2rem;
+  display: flex;
+  align-items: center;
+  gap:1rem;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  border-radius: .5rem;
+}
+
+.message.form{
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: var(--white);
+  top: 2rem;
+  border-radius: .5rem;
+}
+
+.message span{
+  font-size: 2rem;
+  color:var(--black);
+}
+
+.message i{
+  font-size: 2.5rem;
+  color:var(--red);
+  cursor: pointer;
+  transition: .2s linear;
+}
+
+.message i:hover{
+  transform: rotate(90deg);
+}
+
 .btn,
 .option_btn,
 .delete_btn,
@@ -399,4 +446,181 @@ section {
   html {
     font-size: 50%;
   }
+  .heading{
+    font-size: 2rem;
+ }
+ body{
+  padding-bottom: 12rem;
+ }
+
+}
+
+.dashboard .box-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  align-items: flex-start;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.dashboard .box-container .box{
+  padding: 2rem;
+  border-radius: .5rem;
+  background-color: var(--white);
+  text-align: center;
+}
+
+.dashboard .box-container .box h3{
+  margin-bottom: .5rem;
+  font-size: 2.5rem;
+  color: var(--black);
+  margin-bottom: 1.5rem;
+}
+
+.dashboard .box-container .box p{
+  font-size: 2rem;
+  color: var(--light-color);
+  padding: 1rem 1.5rem;
+  border-radius: .5rem;
+  background-color: var(--light-bg);
+  margin: 1rem 0;
+}
+
+.form-container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: calc(100vh - 19rem);
+}
+
+.form-container form{
+  background-color: var(--white);
+  border-radius: .5rem;
+  padding: 1.5rem;
+  width: 80rem;
+  padding-top: 1rem;
+}
+
+.form-container form h3{
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--black);
+  text-transform: capitalize;
+}
+
+.form-container .login{
+  width: 50rem;
+}
+
+.form-container .flex{
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.form-container form .flex .col{
+  flex: 1 1 35rem;
+}
+
+.form-container form p{
+  padding-top: 1rem;
+  font-size: 1.7rem;
+  color: var(--light-color);
+}
+
+.form-container form p span{
+  color: var(--red);
+}
+
+.form-container form .box{
+  width: 100%;
+  border-radius: .5rem;
+  margin: 1rem 0;
+  font-size: 1.8rem;
+  color: var(--black);
+  padding: 1.4rem;
+  background-color: var(--light-bg);
+}
+
+.form-container form .link{
+  padding-top: 2rem;
+  text-align: center;
+  font-size: 2rem;
+  margin: .5rem 0;
+}
+
+.form-container form .link a{
+  color: var(--main-color);
+}
+
+.form-container form .link a:hover{
+  color: var(--black);
+  text-decoration: underline;
+}
+
+.tutor-profile .details{
+  background-color: var(--white);
+  border-radius: .5rem;
+  padding: 2rem;
+  text-align: center;
+}
+
+.tutor-profile .details .tutor{
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.tutor-profile .details .tutor img{
+  height: 10rem;
+  width: 10rem;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: .5rem;
+}
+
+.tutor-profile .details .tutor h3{
+  font-size: 2.5rem;
+  color: var(--black);
+  margin: .5rem 0;
+}
+
+.tutor-profile .details .tutor span{
+  font-size: 1.8rem;
+  color: var(--light-color);
+  display: block;
+}
+
+.tutor-profile .details .flex{
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.tutor-profile .details .flex .box{
+  flex: 1 1 26rem;
+  border-radius: .5rem;
+  background-color: var(--light-bg);
+  padding: 2rem;
+  text-align: center;
+}
+
+.tutor-profile .details .flex span{
+  color: var(--main-color);
+  display: block;
+  margin-bottom: .5rem;
+  font-size: 2.5rem;
+}
+
+.tutor-profile .details .flex .box h3{
+  font-size: 2rem;
+  color: var(--black);
+  margin-bottom: 1rem;
+}
+
+.tutor-profile .details .flex .box p{
+  font-size: 2rem;
+  color: var(--black);
+  padding: .5rem 0;
 }
