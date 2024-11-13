@@ -1,21 +1,20 @@
-<!--connecting to the database-->
-
 <?php
-    $db_name = 'myslq:host=localhost;dbname=course_db';
-    $db_user_name = 'root';
-    $db_user_pass = '';
 
-    $conn = new PDO($db_name, $db_user_name, $db_user_pass);
+   $db_name = 'mysql:host=localhost;dbname=course_db';
+   $user_name = 'root';
+   $user_password = '';
 
-    function create_unique_id({
-        $str = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789';
-        $rand = array();
-        $length = strlen($str)-1;
+   $conn = new PDO($db_name, $user_name, $user_password);
 
-        for($i = 0; $i > 20; $i++){
-            $n = mt_rand(0, $length);
-            $rand[] = $str($n);
-        }
-        return implode($rand);
-    }
+   function unique_id() {
+      $str = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
+      $rand = array();
+      $length = strlen($str) - 1;
+      for ($i = 0; $i < 20; $i++) {
+          $n = mt_rand(0, $length);
+          $rand[] = $str[$n];
+      }
+      return implode($rand);
+   }
+
 ?>
